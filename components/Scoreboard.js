@@ -1,5 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View , Dimensions} from "react-native";
+
+const {height, width} = Dimensions.get('window');
 
 const Scoreboard = ({ userScore, compScore }) => {
   return (
@@ -21,30 +23,34 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginLeft: "auto",
     marginRight: "auto",
-    width: 200,
+    minWidth: width - 180,
     paddingVertical: 15,
     position: "relative",
     alignItems: "center",
+    // backgroundColor:"red",
   },
   score: {
     color: "white",
-    fontSize: 50,
+    fontSize: width / 5,
+    paddingHorizontal: width/8,
   },
   userbadge: {
     paddingHorizontal: 3,
     position: "absolute",
     backgroundColor: "#e2584d",
     color: "white",
-    top: 30,
-    left: -15,
+    top: width / 7,
+    left: -20,
+    fontSize: width /20,
   },
   compbadge: {
     paddingHorizontal: 3,
     position: "absolute",
     backgroundColor: "#e2584d",
     color: "white",
-    top: 30,
-    right: -20,
+    top: width /7,
+    right: -27,
+    fontSize: width /20,
   },
 });
 

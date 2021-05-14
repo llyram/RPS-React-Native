@@ -37,18 +37,18 @@ const App = () => {
   const win = () => {
     setUserScore(userScore + 1);
     setResult(
-      `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(
+      `${convertToWord(userChoice)}(user) beats ${convertToWord(
         compChoice
-      )}${smallCompWord}`
+      )}(comp)`
     );
   };
 
   const lose = () => {
     setCompScore(compScore + 1);
     setResult(
-      `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(
+      `${convertToWord(userChoice)}(user) loses to ${convertToWord(
         compChoice
-      )}${smallCompWord}`
+      )}(comp)`
     );
   };
 
@@ -79,6 +79,7 @@ const App = () => {
   const resetScore = () => {
     setUserScore(0);
     setCompScore(0);
+    setResult("Do you dare?")
   };
 
   return (
@@ -92,6 +93,7 @@ const App = () => {
         counter={counter}
         resetScore={resetScore}
       />
+      
       <View style={styles.bottomview}>
         <Text style={styles.bottomtext}>Made By Maryll Castelino</Text>
       </View>
@@ -111,7 +113,6 @@ const styles = StyleSheet.create({
   bottomview: {
     alignItems: "center",
     justifyContent: "flex-end",
-    flex: 1,
     padding: 10,
   },
 });

@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View , Dimensions} from "react-native";
+const {height, width} = Dimensions.get('window');
 
 const Result = ({ result }) => {
   return (
@@ -11,11 +12,11 @@ const Result = ({ result }) => {
 
 const styles = StyleSheet.create({
   Result: {
-    fontSize: 30,
+    fontSize: width / 10,
     color: "white",
     textAlign: "center",
     paddingVertical: 20,
-    height: 120,
+    height: width /3,
   },
 });
 

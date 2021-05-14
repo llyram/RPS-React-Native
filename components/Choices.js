@@ -1,6 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from "react-native";
 // import { vw, vh } from "react-native-viewport-units";
+
+const {height, width} = Dimensions.get('window');
 
 import rock from "../assets/rock.png";
 import paper from "../assets/paper.png";
@@ -38,12 +40,11 @@ const Choices = ({ setUserChoice, setCounter, counter, resetScore }) => {
         >
           <Image style={styles.image} source={scissors} />
         </TouchableOpacity>
-
-        <Text style={styles.text}>Make your move</Text>
-        <TouchableOpacity style={styles.reset} onPress={() => resetScore()}>
-          <Image source={reset} />
-        </TouchableOpacity>
       </View>
+      <Text style={styles.text}>Make your move{width}</Text>
+      <TouchableOpacity style={styles.button} onPress={() => resetScore()}>
+        <Image style={styles.image} source={reset} />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -51,40 +52,29 @@ const Choices = ({ setUserChoice, setCounter, counter, resetScore }) => {
 const styles = StyleSheet.create({
   choicesview: {
     alignItems: "center",
-    flex: 3,
-    justifyContent: "flex-end",
+    flex: 4,
+    // backgroundColor: "yellow",
+    justifyContent: "center",
   },
   Choices: {
-    alignItems: "center",
+    // backgroundColor: "white",
+    // alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
-    flexWrap: "wrap",
-    // flex: 1,
+    // flexWrap: "wrap",
+    flex: 1,
+
   },
   button: {
+    // backgroundColor: "white",
     borderWidth: 4,
     borderColor: "white",
     borderRadius: 50,
     marginHorizontal: 15,
-    height: 80,
-    width: 80,
-    flex: 1,
+    height: width / 5,
+    width: width / 5,
   },
-  text: {
-    fontSize: 40,
-    color: "white",
-    alignSelf: "center",
-    padding: 30,
-  },
-  reset: {
-    borderWidth: 4,
-    borderColor: "white",
-    borderRadius: 50,
-    height: 80,
-    width: 80,
-    padding: 20,
-    marginHorizontal: 50,
-  },
+
   image: {
     height: 30,
     width: 30,
@@ -92,6 +82,13 @@ const styles = StyleSheet.create({
     marginRight: "auto",
     marginTop: "auto",
     marginBottom: "auto",
+  },
+  text: {
+    fontSize: width/20,
+    color: "white",
+    flex: 1,
+    // alignSelf: "center",
+    // padding: 30,
   },
 });
 
