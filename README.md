@@ -1,5 +1,5 @@
 # Rock-Paper-Scissors
-Rock Paper Scissors mobile app created with React Native using the [expo-cli](expo.io).
+Rock Paper Scissors mobile app created with React Native using the [expo-cli](https://expo.io/).
 
 Android apk - [here](https://github.com/Maryll-castelino/Rock-Paper-Scissors/releases)  
 
